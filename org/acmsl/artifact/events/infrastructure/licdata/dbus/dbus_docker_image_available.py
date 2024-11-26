@@ -23,7 +23,7 @@ from dbus_next import Message
 from dbus_next.service import ServiceInterface, signal
 import json
 from pythoneda.shared import BaseObject
-from org.acmsl.artifact.events.infrastructure.infrastructure.dbus import DBUS_PATH
+from org.acmsl.artifact.events.infrastructure.licdata.dbus import DBUS_PATH
 from typing import List
 
 
@@ -73,7 +73,7 @@ class DbusDockerImageAvailable(BaseObject, ServiceInterface):
         """
         Transforms given event to signal parameters.
         :param event: The event to transform.
-        :type event: org.acmsl.artifact.licdata.domain.DockerImageAvailable
+        :type event: org.acmsl.artifact.events.licdata.DockerImageAvailable
         :return: The event information.
         :rtype: List[str]
         """
@@ -90,7 +90,7 @@ class DbusDockerImageAvailable(BaseObject, ServiceInterface):
         """
         Retrieves the signature for the parameters of given event.
         :param event: The domain event.
-        :type event: org.acmsl.artifact.licdata.domain.DockerImageAvailable
+        :type event: org.acmsl.artifact.events.licdata.DockerImageAvailable
         :return: The signature.
         :rtype: str
         """
@@ -103,7 +103,7 @@ class DbusDockerImageAvailable(BaseObject, ServiceInterface):
         :param message: The message.
         :type message: dbus_next.Message
         :return: The DockerImageAvailable event.
-        :rtype: org.acmsl.artifact.licdata.domain.DockerImageAvailable
+        :rtype: org.acmsl.artifact.events.licdata.DockerImageAvailable
         """
         name, version, url, event_id, prev_event_ids = message.body
         return DockerImageAvailable(

@@ -78,7 +78,7 @@ class DbusDockerImageRequested(BaseObject, ServiceInterface):
         """
         Transforms given event to signal parameters.
         :param event: The event to transform.
-        :type event: org.acmsl.artifact.licdata.domain.DockerImageRequested
+        :type event: org.acmsl.artifact.events.licdata.DockerImageRequested
         :return: The event information.
         :rtype: List[str]
         """
@@ -89,7 +89,7 @@ class DbusDockerImageRequested(BaseObject, ServiceInterface):
         """
         Retrieves the signature for the parameters of given event.
         :param event: The domain event.
-        :type event: org.acmsl.artifact.licdata.domain.DockerImageRequested
+        :type event: org.acmsl.artifact.events.licdata.DockerImageRequested
         :return: The signature.
         :rtype: str
         """
@@ -102,7 +102,7 @@ class DbusDockerImageRequested(BaseObject, ServiceInterface):
         :param message: The message.
         :type message: dbus_next.Message
         :return: The DockerImageRequested event.
-        :rtype: org.acmsl.artifact.licdata.domain.DockerImageRequested
+        :rtype: org.acmsl.artifact.events.licdata.DockerImageRequested
         """
         version, event_id, prev_event_ids = message.body
         return DockerImageRequested(version, None, event_id, json.loads(prev_event_ids))
