@@ -23,7 +23,4 @@ __path__ = __import__("pkgutil").extend_path(__path__, __name__)
 
 DBUS_PATH = "/org/acmsl/artifact/licdata"
 
-from .dbus_docker_image_requested import DbusDockerImageRequested
-from .dbus_docker_image_available import DbusDockerImageAvailable
-
 # vim: syntax=python ts=4 sw=4 sts=4 tw=79 sr et
